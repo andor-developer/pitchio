@@ -1,0 +1,81 @@
+package baseball
+
+syntax "proto3"
+
+message Ball {
+	required util.UUID id = 1;
+	required index = 2;
+	optional size = 3;
+	optional weight = 4; 
+}
+
+message GameDay {
+	optional weather.weather = 1; 
+	ottional stadium.stadium = 2; 
+	optional string hometeam = 3; 
+	optional string awayteam = 4;
+	optional bool scrimmage = 5;
+	optional util.Date date = 6;
+	optinal util.Time starttime = 7; 
+}
+
+message Point {
+	required double X = 1;
+	required double Y = 2;
+	optional double Z = 3;
+	required float64  Timestamp = 4;
+}
+
+message Pitch {
+	optional float spin = 1;
+	optioanl pitchType type = 2; 
+	optional float speed = 3; 
+}
+
+message Count {
+	required int balls = 1;
+	required int strikes = 2;
+}
+
+message Result {
+	optional bool walk = 1;
+	optional bool strikeout = 2;
+	optional bool hbp = 3;
+	optional bool foulball = 4;
+	optioanl bool dropthree = 5;
+	optional Hit hit = 6;
+	optional string other = 7;
+	optional bool walk = 8;
+	optional bool whiff = 9; 
+}
+
+message Pitcher {
+	required string name = 1;
+	optional int feet = 2;
+	optional int cm = 3;
+	optional int weight = 4; 
+	optional string gender = 5; 
+	optional string background = 6;
+	optional bool switch = 7;
+	optional string leftvright = 8;
+}
+
+message PitchingLineup {
+	repeated Pitcher pitcher = 1;
+}
+
+message Hitter {
+ 	optional string name = 1;
+        optional int feet = 2;
+        optional int cm = 3;
+        optional int weight = 4;
+        optional string gender = 5;
+        optional string background = 6;
+        optional bool switch = 7;
+        optional string leftvright = 8;
+	optional int homeruns = 9;
+	optional float average = 10; 
+	optional float obp = 11;
+}
+
+
